@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet Delight Hamper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 20px; /* Adding some padding for spacing */
+    }
+
+    header {
+      background-color: #99ccff; /* Light blue background */
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex; /* Flexbox for layout */
+      justify-content: space-around; /* Align items with space between them */
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Wrap items to next line if necessary */
+    }
+
+    .box {
+      flex: 1; /* Each box takes equal space */
+      background-color: #99ccff; /* Light blue background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      margin: 10px;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative; /* Ensure relative positioning for absolute buttons */
+    }
+
+    .box:hover {
+      background-color: #66b2ff; /* Lighter shade of blue on hover */
+    }
+
+    .photo-section {
+      flex: 1; /* Full width for photo section */
+      position: relative; /* Relative positioning for arrows */
+      overflow: hidden; /* Hide overflow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px; /* Spacing between images */
+    }
+
+    .photo:last-child {
+      width: 100%;
+      object-fit: cover; /* Ensure the photo covers the entire box */
+    }
+
+    .orchid-box, .info-box {
+      padding: 20px;
+    }
+
+    .orchid-section h2 {
+      margin-top: 0;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .shop-now-button, .add-to-cart-button {
+      padding: 10px 20px;
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .shop-now-button:hover, .add-to-cart-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .customization-container {
+      margin-top: 20px;
+    }
+
+    .customization-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .customization-container input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #004c99; /* Border matching blue palette */
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 10px; /* Spacing between inputs */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align items */
+      }
+      .box {
+        width: 100%; /* Full width for each box on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Description</h1>
+  </header>
+  <div class="container">
+    <section class="box photo-section">
+      <img class="photo" src="https://imgcdn.floweraura.com/travel-hamper-ven-06-ha4_nb.jpg" alt="Gourmet Delight Hamper">
+    </section>
+    <section class="box orchid-section">
+      <div class="orchid-box">
+        <h2> Adventure Hamper</h2>
+<p>Embark on your travels with our personalized Traveling Hamper, featuring essential items to enhance your journey. This thoughtful collection includes a stylish bag tag and keychain, both customizable with engraved names for a personal touch. Stay organized with a compact cosmetic pouch and diary, perfect for jotting down memories. Safeguard essentials with a sleek wallet and passport cover, each elegantly engraved with your name. Whether for a solo adventure or a gift for a globetrotter, this hamper ensures practicality and style. Packaged with care, it’s ideal for commemorating special occasions or simply treating yourself to a luxurious travel experience.</p>
+        <div class="customization-container">
+          <label for="messageInput">Enter a name to be engraved:</label>
+          <input type="text" id="messageInput" name="messageInput" placeholder="Personal Message" />
+        </div>
+      </div>
+    </section>
+    <section class="box product-description">
+      <div class="info-box">
+        <h3>Description of Product</h3>
+        <p><strong>Price:</strong> $99.99</p>
+        <p><strong>Includes:</strong> diary, keychain, passport cover and more.</p>
+        <p><strong>Packaging:</strong> Beautifully arranged in an elegant hamper.</p>
+        <p><strong>Delivery:</strong> Free shipping within the US for orders over $50.</p>
+        <p><strong>Additional Notes:</strong> Items may vary slightly based on seasonal availability.</p>
+      </div>
+    </section>
+  </div>
+  <div class="button-container">
+    <button class="shop-now-button">Shop Now</button>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Blanket Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 20px; /* Adding some padding for spacing */
+    }
+
+    header {
+      background-color: #99ccff; /* Light blue background */
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex; /* Flexbox for layout */
+      justify-content: space-around; /* Align items with space between them */
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Wrap items to next line if necessary */
+    }
+
+    .box {
+      flex: 1; /* Each box takes equal space */
+      background-color: #99ccff; /* Light blue background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      margin: 10px;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative; /* Ensure relative positioning for absolute buttons */
+    }
+
+    .box:hover {
+      background-color: #66b2ff; /* Lighter shade of blue on hover */
+    }
+
+    .photo-section {
+      flex: 1; /* Full width for photo section */
+      position: relative; /* Relative positioning for arrows */
+      overflow: hidden; /* Hide overflow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-slider {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease; /* Smooth slide transition */
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px; /* Spacing between images */
+    }
+
+    .photo:last-child {
+      width: 100%;
+      object-fit: cover; /* Ensure the photo covers the entire box */
+    }
+
+    .photo-controls {
+      position: absolute;
+      bottom: 10px; /* Adjust bottom position */
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 40px); /* Adjust width to fit within the box */
+      padding: 0 20px; /* Padding for buttons */
+      z-index: 1; /* Ensure buttons are above images */
+    }
+
+    .prev-button, .next-button {
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev-button:hover, .next-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .orchid-box, .info-box {
+      padding: 20px;
+    }
+
+    .orchid-section h2 {
+      margin-top: 0;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .color-button {
+      padding: 10px 20px;
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .color-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .shop-now-button, .add-to-cart-button {
+      padding: 10px 20px;
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .shop-now-button:hover, .add-to-cart-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .customization-container {
+      margin-top: 20px;
+    }
+
+    .customization-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .customization-container input[type="text"], .customization-container input[type="file"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #004c99; /* Border matching blue palette */
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 10px; /* Spacing between inputs */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align items */
+      }
+      .box {
+        width: 100%; /* Full width for each box on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Personalized Blankets</h1>
+  </header>
+  <div class="container">
+    <section class="box photo-section">
+      <div class="photo-slider">
+        <img class="photo" src="https://images-cdn.ubuy.co.in/638ad787de1e2d4be3646872-memoshe-custom-blankets-with-photos.jpg" alt="Blanket 1">
+        <img class="photo" src="https://i.etsystatic.com/18633876/r/il/2a46be/4291871820/il_fullxfull.4291871820_ejxn.jpg" alt="Blanket 2">
+        <img class="photo" src="https://images-cdn.ubuy.co.in/636dfbfbb7fe507f6e72da95-personalized-baby-blankets-for-boy.jpg" alt="Blanket 3">
+      </div>
+      <div class="photo-controls">
+        <button class="prev-button" onclick="moveSlider('prev')">Prev</button>
+        <button class="next-button" onclick="moveSlider('next')">Next</button>
+      </div>
+    </section>
+    <section class="box orchid-section">
+      <div class="orchid-box">
+        <h2>Cozy & Personalized</h2>
+        <p>Experience warmth and comfort with our Personalized Blankets. Customize your blanket with a cherished photo and make it uniquely yours. Whether it's for a loved one or yourself, this blanket is perfect for adding a personal touch to your home decor. Made from high-quality materials, our blankets are soft, durable, and perfect for snuggling. Choose your favorite design and upload your photo to create a one-of-a-kind keepsake. Ideal for gifts or personal use, our personalized blankets are sure to bring joy and comfort.</p>
+        <div class="button-container">
+          <button class="color-button" onclick="goToSlide(0)">Single Photo</button>
+          <button class="color-button" onclick="goToSlide(1)">Collage</button>
+          <button class="color-button" onclick="goToSlide(2)">Name</button>
+        </div>
+        <div class="customization-container">
+          <label for="nameInput">Enter your name for customization:</label>
+          <input type="text" id="nameInput" name="nameInput" placeholder="Your Name" />
+          <label for="photoInput">Upload your photo:</label>
+          <input type="file" id="photoInput" name="photoInput" accept="image/*" />
+        </div>
+      </div>
+    </section>
+    <section class="box product-description">
+      <div class="info-box">
+        <h3>Description of Product</h3>
+        <p><strong>Price:</strong> $59.99</p>
+        <p><strong>Available Varieties:</strong> Classic, Modern, Elegant</p>
+        <p><strong>Includes:</strong> Personalized photo, high-quality material, variety of designs.</p>
+        <p><strong>Delivery:</strong> Free shipping within the US for orders over $75.</p>
+        <p><strong>Care Instructions:</strong> Machine wash cold, tumble dry low; avoid bleach.</p>
+        <p><strong>Additional Notes:</strong> Actual color and texture may vary slightly due to customization.</p>
+      </div>
+    </section>
+  </div>
+  <div class="button-container">
+    <button class="shop-now-button">Shop Now</button>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+
+  <script>
+    // JavaScript for photo slider
+    const photoSlider = document.querySelector('.photo-slider');
+    const slides = document.querySelectorAll('.photo-slider img');
+    const total = slides.length;
+    let currentSlide = 0;
+
+    function moveSlider(direction) {
+      const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
+
+      if (direction === 'next') {
+        currentSlide++;
+        if (currentSlide >= total) {
+          currentSlide = 0; // wrap around to the first slide
+        }
+      } else if (direction === 'prev') {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = total - 1; // wrap around to the last slide
+        }
+      }
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      const slideWidth = slides[0].clientWidth;
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+  </script>
+</body>
+</html>

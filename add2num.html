@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Input and Print</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            text-align: left;
+            margin-top: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Array Input and Print</h2>
+    <input type="text" id="element" placeholder="Enter element">
+    <input type="button" value="Add to Array" onclick="addElement()">
+    <div id="result"></div>
+
+    <script>
+        var array = [];
+
+        function addElement() {
+            var element = document.getElementById('element').value;
+            if (element.trim() !== '') {
+                array.push(element);
+                displayArray();
+                document.getElementById('element').value = ''; // Clear input
+            }
+        }
+
+        function displayArray() {
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = '<strong>Array:</strong><br>';
+            array.forEach(function(item) {
+                resultElement.innerHTML += item + '<br>';
+            });
+        }
+    </script>
+</body>
+</html>

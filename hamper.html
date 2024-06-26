@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Hampers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Shades of pink */
+            color: #333; /* Black */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FF69B4; /* Shades of white */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .item {
+            background-color: #fff; /* Shades of white */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative; /* Ensures relative positioning for absolute elements */
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item img {
+            width: 100%; /* Ensures images fill their container */
+            max-width: 200px; /* Fixed max-width for smaller images */
+            height: 200px; /* Fixed height for uniformity */
+            object-fit: cover; /* Ensures the image covers the area */
+            border-radius: 8px;
+        }
+
+        .item h3 {
+            margin-top: 10px;
+        }
+
+        .item p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e91e63; /* Shades of pink */
+        }
+
+        .shop-button {
+            display: inline-block;
+            background-color: #e91e63; /* Shades of pink */
+            color: #fff; /* White */
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .shop-button:hover {
+            background-color: #c2185b; /* Darker shade of pink */
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #e91e63; /* Shades of pink */
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hampers</h1>
+    </header>
+    <div class="container">
+        <!-- Gourmet Delight Hamper -->
+        <div class="item">
+            <img src="https://shakkr.in/cdn/shop/products/In-Room-Hamper-01.jpg?v=1680591570&width=2048" alt="Gourmet Delight Hamper">
+            <h3>Gourmet Delight Hamper</h3>
+            <p>$59.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/gourmenthamper.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Spa Retreat Hamper -->
+        <div class="item">
+            <img src="https://i.etsystatic.com/25518508/r/il/f3d7f6/3739199120/il_fullxfull.3739199120_8fez.jpg" alt="Spa Retreat Hamper">
+            <h3>Spa Retreat Hamper</h3>
+            <p>$74.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/spahamper.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Chocolate Indulgence Hamper -->
+        <div class="item">
+            <img src="https://giftsbyrashi.com/wp-content/uploads/2021/12/Make-Your-Own-Hamper-Mom-To-Be.webp" alt="Chocolate Indulgence Hamper">
+            <h3>Mom To Bee Hamper</h3>
+            <p>$49.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/Momhamper.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Wine Lover's Hamper -->
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6qNyATCOlz3j8GgeP-5FxskEuqEO-ekRvtw&s"alt="Wine Lover's Hamper">
+            <h3>Dad To Be Hamper</h3>
+            <p>$89.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/dadhamper.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Cozy Comfort Hamper -->
+        <div class="item">
+            <img src="https://corporates.giftsbyrashi.com/wp-content/uploads/2021/12/Luxury-Bridesmaid-Hamper-1.jpeg" alt="Cozy Comfort Hamper">
+            <h3>Bridesmaid Hamper</h3>
+            <p>$64.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/bridesmaid.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Adventure Seeker Hamper -->
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxNudbn_a919I0bV8Qs2FhXkvgSRhACKJOQg&s" alt="Adventure Seeker Hamper">
+            <h3>Adventure Seeker Hamper</h3>
+            <p>$99.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/adventurehamper.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+    </div>
+       
+       
+    <!-- Optional JavaScript -->
+    <script>
+        // Your optional JavaScript can be added here for enhanced functionality
+        // Example:
+        // const items = document.querySelectorAll('.item');
+        // items.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         alert(`Clicked on ${item.querySelector('h3').textContent}`);
+        //     });
+        // });
+    </script>
+</body>
+</html>

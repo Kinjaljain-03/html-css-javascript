@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Gifts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Shades of pink */
+            color: #333; /* Black */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FF69B4; /* Shades of white */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .item {
+            background-color: #fff; /* Shades of white */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative; /* Ensures relative positioning for absolute elements */
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item img {
+            width: 100%; /* Ensures images fill their container */
+            max-width: 200px; /* Fixed max-width for smaller images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px;
+        }
+
+        .item h3 {
+            margin-top: 10px;
+        }
+
+        .item p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e91e63; /* Shades of pink */
+        }
+
+        .shop-button {
+            display: inline-block;
+            background-color: #e91e63; /* Shades of pink */
+            color: #fff; /* White */
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .shop-button:hover {
+            background-color: #c2185b; /* Darker shade of pink */
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #e91e63; /* Shades of pink */
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Personalized Gifts</h1>
+    </header>
+    <div class="container">
+        <!-- Personalized Mug -->
+        <div class="item">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSFja3g1EU3QAdCz0QNxAuGX_OxAMtd8cJ8f2muJEGUbjSwvJr6RD_xD_Mzig6KfnhUITCN4XgTgsvKp7wnLtjgy0fuV2OOj_Gw9qArlGWx&usqp=CAE" alt="Personalized Mug">
+            <h3>Personalized Passport Cover</h3>
+            <p>$14.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/passportcover.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Personalized Photo Frame -->
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2BXx3s-lAF4a1XEqKLLlx2RlkGwtF4Uq4kA&s" alt="Personalized Photo Frame">
+            <h3>Personalized Blanket</h3>
+            <p>$59.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/blanket.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Personalized T-shirt -->
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFVYBpkE2CizgNUizEjJmdjJZ6w2gQAn8_yA&s" alt="Personalized T-shirt">
+            <h3>Custom Photoframe</h3>
+            <p>$39.99</p>
+            <a href="file:///C:/Users/kinja/OneDrive/Documents/locationframe.html" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Personalized Keychain -->
+        <div class="item">
+            <img src="https://i.etsystatic.com/8595828/r/il/fe8e06/6024538431/il_570xN.6024538431_j225.jpg" alt="Personalized Keychain">
+            <h3>Customized Necklace</h3>
+            <p>$9.99</p>
+            <a href="#" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Additional Product 1 -->
+        <div class="item">
+            <img src="https://i.etsystatic.com/28218994/r/il/18cd9d/3767900774/il_fullxfull.3767900774_iaqt.jpg" alt="Additional Product 1">
+            <h3>Customized His&Her Bracelet</h3>
+            <p>$39.99</p>
+            <a href="#" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+       
+        <!-- Additional Product 2 -->
+        <div class="item">
+            <img src="https://i.etsystatic.com/11396698/r/il/b820ad/5560619922/il_570xN.5560619922_gcjo.jpg" alt="Additional Product 2">
+            <h3>Custom Jewelry Box</h3>
+            <p>$49.99</p>
+            <a href="#" class="shop-button">Shop <span class="heart-icon">&hearts;</span></a>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+        // Your optional JavaScript can be added here for enhanced functionality
+        // Example:
+        // const items = document.querySelectorAll('.item');
+        // items.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         alert(`Clicked on ${item.querySelector('h3').textContent}`);
+        //     });
+        // });
+    </script>
+</body>
+</html>

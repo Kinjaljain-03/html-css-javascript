@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Box Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 20px; /* Adding some padding for spacing */
+    }
+
+    header {
+      background-color: #ffcc99; /* Light orange background */
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex; /* Flexbox for layout */
+      justify-content: space-around; /* Align items with space between them */
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Wrap items to next line if necessary */
+    }
+
+    .box {
+      flex: 1; /* Each box takes equal space */
+      background-color: #ffcc99; /* Light orange background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      margin: 10px;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative; /* Ensure relative positioning for absolute buttons */
+    }
+
+    .box:hover {
+      background-color: #ffb366; /* Lighter shade of orange on hover */
+    }
+
+    .photo-section {
+      flex: 1; /* Full width for photo section */
+      position: relative; /* Relative positioning for arrows */
+      overflow: hidden; /* Hide overflow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-slider {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease; /* Smooth slide transition */
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px; /* Spacing between images */
+    }
+
+    .photo-controls {
+      position: absolute;
+      bottom: 10px; /* Adjust bottom position */
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 40px); /* Adjust width to fit within the box */
+      padding: 0 20px; /* Padding for buttons */
+      z-index: 1; /* Ensure buttons are above images */
+    }
+
+    .prev-button, .next-button {
+      background-color: #b35900; /* Darker orange */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev-button:hover, .next-button:hover {
+      background-color: #994c00; /* Darker shade on hover */
+    }
+
+    .orchid-box, .info-box {
+      padding: 20px;
+    }
+
+    .orchid-section h2 {
+      margin-top: 0;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .color-button {
+      padding: 10px 20px;
+      background-color: #b35900; /* Darker orange */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .color-button:hover {
+      background-color: #994c00; /* Darker shade on hover */
+    }
+
+    .shop-now-button, .add-to-cart-button {
+      padding: 10px 20px;
+      background-color: #b35900; /* Darker orange */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .shop-now-button:hover, .add-to-cart-button:hover {
+      background-color: #994c00; /* Darker shade on hover */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align items */
+      }
+      .box {
+        width: 100%; /* Full width for each box on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Description</h1>
+  </header>
+  <div class="container">
+    <section class="box photo-section">
+      <div class="photo-slider">
+        <img class="photo" src="https://images-cdn.ubuy.co.id/634ceaefefb1ef7311561ae7-godiva-chocolatier.jpg" alt="Chocolate Box 1">
+        <img class="photo" src="data:image/jpeg;base64,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" alt="Chocolate Box 2">
+        <img class="photo" src="https://5.imimg.com/data5/SELLER/Default/2021/7/ZL/JK/VV/36229935/250gm-assorted-chocolate-gift-box.jpg" alt="Chocolate Box 3">
+      </div>
+      <div class="photo-controls">
+        <button class="prev-button" onclick="moveSlider('prev')">Prev</button>
+        <button class="next-button" onclick="moveSlider('next')">Next</button>
+      </div>
+    </section>
+    <section class="box orchid-section">
+      <div class="orchid-box">
+        <h2>Luxury Chocolate Box</h2>
+        <p>Introducing our luxurious Chocolate Box, available in three decadent varieties: Milk, Dark, and Assorted. Each box is filled with an irresistible selection of gourmet chocolates, crafted to delight your senses. The Milk variety offers creamy, smooth chocolates; the Dark variety provides rich, intense flavors; and the Assorted variety combines the best of both worlds for a delightful surprise in every bite. Perfect for indulging yourself or gifting to someone special, our Chocolate Box promises an unforgettable experience of sweetness and elegance. Savor the taste of luxury with each exquisite piece.</p>
+        <div class="button-container">
+          <button class="color-button" onclick="goToSlide(0)">Milk</button>
+          <button class="color-button" onclick="goToSlide(1)">Dark</button>
+          <button class="color-button" onclick="goToSlide(2)">Assorted</button>
+        </div>
+      </div>
+    </section>
+    <section class="box product-description">
+      <div class="info-box">
+        <h3>Description of Product</h3>
+        <p><strong>Price:</strong> $24.99</p>
+        <p><strong>Available Varieties:</strong> Milk, Dark, Assorted</p>
+        <p><strong>Includes:</strong> An exquisite assortment of premium chocolates, elegantly packaged.</p>
+        <p><strong>Delivery:</strong> Free shipping within the US for orders over $60.</p>
+        <p><strong>Care Instructions:</strong> Store in a refrigerator; best enjoyed within 3 months of purchase.</p>
+        <p><strong>Additional Notes:</strong> Please note that actual assortment may vary slightly due to seasonal availability.</p>
+      </div>
+    </section>
+  </div>
+  <div class="button-container">
+    <button class="shop-now-button">Shop Now</button>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+
+  <script>
+    // JavaScript for photo slider
+    const photoSlider = document.querySelector('.photo-slider');
+    const slides = document.querySelectorAll('.photo-slider img');
+    const total = slides.length;
+    let currentSlide = 0;
+
+    function moveSlider(direction) {
+      const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
+
+      if (direction === 'next') {
+        currentSlide++;
+        if (currentSlide >= total) {
+          currentSlide = 0; // wrap around to the first slide
+        }
+      } else if (direction === 'prev') {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = total - 1; // wrap around to the last slide
+        }
+      }
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      const slideWidth = slides[0].clientWidth; //
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+  </script>
+</body>
+</html>

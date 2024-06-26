@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Necklace</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 20px; /* Adding some padding for spacing */
+    }
+
+    header {
+      background-color: #99ccff; /* Light blue background */
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex; /* Flexbox for layout */
+      justify-content: space-around; /* Align items with space between them */
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Wrap items to next line if necessary */
+    }
+
+    .box {
+      flex: 1; /* Each box takes equal space */
+      background-color: #99ccff; /* Light blue background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      margin: 10px;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative; /* Ensure relative positioning for absolute buttons */
+    }
+
+    .box:hover {
+      background-color: #66b2ff; /* Lighter shade of blue on hover */
+    }
+
+    .photo-section {
+      flex: 1; /* Full width for photo section */
+      position: relative; /* Relative positioning for arrows */
+      overflow: hidden; /* Hide overflow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-slider {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease; /* Smooth slide transition */
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px; /* Spacing between images */
+    }
+
+    .photo:last-child {
+      width: 100%;
+      object-fit: cover; /* Ensure the photo covers the entire box */
+    }
+
+    .photo-controls {
+      position: absolute;
+      bottom: 10px; /* Adjust bottom position */
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 40px); /* Adjust width to fit within the box */
+      padding: 0 20px; /* Padding for buttons */
+      z-index: 1; /* Ensure buttons are above images */
+    }
+
+    .prev-button, .next-button {
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev-button:hover, .next-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .orchid-box, .info-box {
+      padding: 20px;
+    }
+
+    .orchid-section h2 {
+      margin-top: 0;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .color-button {
+      padding: 10px 20px;
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .color-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .shop-now-button, .add-to-cart-button {
+      padding: 10px 20px;
+      background-color: #004c99; /* Darker blue */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .shop-now-button:hover, .add-to-cart-button:hover {
+      background-color: #003366; /* Darker shade on hover */
+    }
+
+    .customization-container {
+      margin-top: 20px;
+    }
+
+    .customization-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .customization-container input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #004c99; /* Border matching blue palette */
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 10px; /* Spacing between inputs */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align items */
+      }
+      .box {
+        width: 100%; /* Full width for each box on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Description</h1>
+  </header>
+  <div class="container">
+    <section class="box photo-section">
+      <div class="photo-slider">
+        <img class="photo" src="https://i.etsystatic.com/25947065/r/il/eb5cc5/5906524770/il_570xN.5906524770_cdiu.jpg" alt="Necklace 1">
+        <img class="photo" src="https://i.etsystatic.com/8617622/r/il/88004c/2943137867/il_fullxfull.2943137867_g6dr.jpg"alt="Necklace 2">
+        <img class="photo" src="https://i.etsystatic.com/19457349/r/il/863454/5101272216/il_fullxfull.5101272216_eblx.jpg" alt="Necklace 2">
+      </div>
+      <div class="photo-controls">
+        <button class="prev-button" onclick="moveSlider('prev')">Prev</button>
+        <button class="next-button" onclick="moveSlider('next')">Next</button>
+      </div>
+    </section>
+    <section class="box orchid-section">
+      <div class="orchid-box">
+        <h2>Jewelry Box</h2>
+<p>Discover the perfect blend of elegance and personalization with our Custom Jewelry Box collection. Each jewelry box is designed to store your treasured pieces while reflecting your unique style. Personalize with names, dates, or special messages to create a truly one-of-a-kind keepsake. Crafted with high-quality materials, these jewelry boxes are both beautiful and durable, making them perfect gifts for any occasion. Whether celebrating a birthday, anniversary, or simply cherishing a moment, our personalized jewelry boxes offer a timeless touch of sentimentality and sophistication. Keep your precious memories safe and stylish with a custom jewelry box that speaks to your heart.</p>
+        <div class="button-container">
+          <button class="color-button" onclick="goToSlide(0)">Pink</button>
+          <button class="color-button" onclick="goToSlide(1)">White</button>
+          <button class="color-button" onclick="goToSlide(2)">Mint</button>
+        </div>
+        <div class="customization-container">
+          <label for="engravingInput">Enter the text for engraving:</label>
+          <input type="text" id="engravingInput" name="engravingInput" placeholder="Engraving Text" />
+        </div>
+      </div>
+    </section>
+    <section class="box product-description">
+      <div class="info-box">
+        <h3>Description of Product</h3>
+        <p><strong>Price:</strong> $49.99</p>
+        <p><strong>Available Designs:</strong> Pink, White, Mint</p>
+        <p><strong>Includes:</strong> High-quality jewelry box, personalized engraving, various designs to choose from.</p>
+        <p><strong>Delivery:</strong> Free shipping within the US for orders over $50.</p>
+        <p><strong>Care Instructions:</strong> Clean with a soft cloth; avoid contact with chemicals and water.</p>
+        <p><strong>Additional Notes:</strong> Actual colors and textures may vary slightly due to customization.</p>
+      </div>
+    </section>
+  </div>
+  <div class="button-container">
+    <button class="shop-now-button">Shop Now</button>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+
+  <script>
+    // JavaScript for photo slider
+    const photoSlider = document.querySelector('.photo-slider');
+    const slides = document.querySelectorAll('.photo-slider img');
+    const total = slides.length;
+    let currentSlide = 0;
+
+    function moveSlider(direction) {
+      const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
+
+      if (direction === 'next') {
+        currentSlide++;
+        if (currentSlide >= total) {
+          currentSlide = 0; // wrap around to the first slide
+        }
+      } else if (direction === 'prev') {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = total - 1; // wrap around to the last slide
+        }
+      }
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
+
+      photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+    }
+  </script>
+</body>
+</html>

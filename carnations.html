@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Description</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      margin: 0;
+      padding: 20px; /* Adding some padding for spacing */
+    }
+
+    header {
+      background-color: #ffcccc; /* Light pink background */
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex; /* Flexbox for layout */
+      justify-content: space-around; /* Align items with space between them */
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Wrap items to next line if necessary */
+    }
+
+    .box {
+      flex: 1; /* Each box takes equal space */
+      background-color: #ffcccc; /* Light pink background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      margin: 10px;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative; /* Ensure relative positioning for absolute buttons */
+    }
+
+    .box:hover {
+      background-color: #ffb3d9; /* Lighter shade of pink on hover */
+    }
+
+    .photo-section {
+      flex: 1; /* Full width for photo section */
+      position: relative; /* Relative positioning for arrows */
+      overflow: hidden; /* Hide overflow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-slider {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease; /* Smooth slide transition */
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px; /* Spacing between images */
+    }
+
+    .photo-controls {
+      position: absolute;
+      bottom: 10px; /* Adjust bottom position */
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 40px); /* Adjust width to fit within the box */
+      padding: 0 20px; /* Padding for buttons */
+      z-index: 1; /* Ensure buttons are above images */
+    }
+
+    .prev-button, .next-button {
+      background-color: #ff007f; /* Hot pink */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .prev-button:hover, .next-button:hover {
+      background-color: #ff0055; /* Darker shade on hover */
+    }
+
+    .orchid-box, .info-box {
+      padding: 20px;
+    }
+
+    .orchid-section h2 {
+      margin-top: 0;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .color-button {
+      padding: 10px 20px;
+      background-color: #ff007f; /* Hot pink */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .color-button:hover {
+      background-color: #ff0055; /* Darker shade on hover */
+    }
+
+    .shop-now-button, .add-to-cart-button {
+      padding: 10px 20px;
+      background-color: #ff007f; /* Hot pink */
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Adjusted margin */
+    }
+
+    .shop-now-button:hover, .add-to-cart-button:hover {
+      background-color: #ff0055; /* Darker shade on hover */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align items */
+      }
+      .box {
+        width: 100%; /* Full width for each box on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Description</h1>
+  </header>
+  <div class="container">
+    <section class="box photo-section">
+      <div class="photo-slider">
+        <img class="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs2f-NQzm9LWUL0zUMiu2_0balpEXjbx-1hA&s" alt="Orchids Bouquet 1">
+        <img class="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkWEgNXMgCv0GMNFmcfgmDwkMKlfOsSiK1JA&s" alt="Orchids Bouquet 2">
+        <img class="photo" src="https://www.cakeplaza.in/cdn/shop/products/yellow-carnation-bouquet-cakeplaza_512x.jpg?v=1610351756" alt="Orchids Bouquet 3">
+      </div>
+      <div class="photo-controls">
+        <button class="prev-button" onclick="moveSlider('prev')">Prev</button>
+        <button class="next-button" onclick="moveSlider('next')">Next</button>
+      </div>
+    </section>
+    <section class="box orchid-section">
+      <div class="orchid-box">
+        <h2>Love For Pastel Carnations</h2>
+        <p>Discover our delightful Multiple Color Carnations Bouquet, featuring a harmonious blend of pink, white, and yellow carnations. Each bloom symbolizes a unique sentiment: pink for admiration and gratitude, white for pure love and good luck, and yellow for friendship and joy. Carnations are cherished for their longevity and delicate ruffled petals, making them perfect for any occasion from birthdays to weddings. Whether you're expressing affection, celebrating milestones, or simply brightening someone's day, our bouquet is a thoughtful choice. Embrace the significance and beauty of carnations with this charming arrangement that embodies heartfelt sentiments in every color.</p>
+        <div class="button-container">
+          <button class="color-button" onclick="goToSlide(0)">Pink</button>
+          <button class="color-button" onclick="goToSlide(1)">White</button>
+          <button class="color-button" onclick="goToSlide(2)">Yellow</button>
+      </div>
+    </section>
+    <section class="box product-description">
+      <div class="info-box">
+        <h3>Description of Product</h3>
+        <p><strong>Price:</strong> $29.99</p>
+        <p><strong>Available Colors:</strong> Pink, White, Yellow.</p>
+        <p><strong>Includes:</strong> A mix of premium carnations, greenery, and a decorative wrap.</p>
+        <p><strong>Delivery:</strong> Free shipping within the US for orders over $50.</p>
+        <p><strong>Care Instructions:</strong> Keep in a cool place; change water every 2 days.</p>
+        <p><strong>Additional Notes:</strong> Please note that actual arrangement may vary slightly in color and composition due to seasonal availability.</p>
+      </div>
+    </section>
+  </div>
+  <div class="button-container">
+    <button class="shop-now-button">Shop Now</button>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+
+  <script>
+    // JavaScript for photo slider
+    const photoSlider = document.querySelector('.photo-slider');
+    const slides = document.querySelectorAll('.photo-slider img');
+    const total = slides.length;
+    let currentSlide = 0;
+
+    function moveSlider(direction) {
+      const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
+
+      if (direction === 'next') {
+        currentSlide++;
+        if (currentSlide >= total) {
+          currentSlide = 0; // wrap around to the first slide
+        }
+      } else if (direction === 'prev') {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = total - 1; // wrap around to the last slide
+        }
+      }
+
+      photoSlider.style.transform = `translateX(${-slideWidth *currentSlide}px)`;
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  const slideWidth = slides[0].clientWidth; //
+
+  photoSlider.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
+}
+ </script>
+</body>
+</html>
